@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>558519636563-veknju05lcu5noja7koin0l8ouhkntac.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.558519636563-veknju05lcu5noja7koin0l8ouhkntac</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBqL8A5uuKS4X-8NjIzp5DISH0bjjiHy5U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>558519636563</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.daveapps.Dave-Social-App2</string>
+	<key>PROJECT_ID</key>
+	<string>dave-social</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dave-social.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:558519636563:ios:f31881bc24d7769b</string>
+	<key>DATABASE_URL</key>
+	<string>https://dave-social.firebaseio.com</string>
+</dict>
+</plist>
