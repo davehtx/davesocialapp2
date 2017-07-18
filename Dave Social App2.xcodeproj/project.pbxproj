@@ -36,6 +36,7 @@
 		8DA669341F1322FF0010DA9D /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		8DA669361F1326160010DA9D /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		8DA669381F1327B70010DA9D /* FancyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
+		8DA6693A1F1C60520010DA9D /* Dave Social App2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dave Social App2.entitlements"; sourceTree = "<group>"; };
 		B41EFC9927A7F2C9477BA181 /* Pods-Dave Social App2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dave Social App2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dave Social App2/Pods-Dave Social App2.release.xcconfig"; sourceTree = "<group>"; };
 		F6CFA595FE788ECEA8DA74BB /* Pods_Dave_Social_App2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dave_Social_App2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -90,6 +91,7 @@
 		8DA669171F0DD1620010DA9D /* Dave Social App2 */ = {
 			isa = PBXGroup;
 			children = (
+				8DA6693A1F1C60520010DA9D /* Dave Social App2.entitlements */,
 				8DA669311F1317D90010DA9D /* Util */,
 				8DA6692E1F0DD7020010DA9D /* Controller */,
 				8DA6692D1F0DD6F50010DA9D /* View */,
@@ -175,6 +177,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = VK9VX862UY;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -393,11 +400,13 @@
 			baseConfigurationReference = 00DF3224C1056D9603FBA933 /* Pods-Dave Social App2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Dave Social App2/Dave Social App2.entitlements";
 				DEVELOPMENT_TEAM = VK9VX862UY;
 				INFOPLIST_FILE = "Dave Social App2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.daveapps.Dave-Social-App2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos10.3;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -407,11 +416,13 @@
 			baseConfigurationReference = B41EFC9927A7F2C9477BA181 /* Pods-Dave Social App2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Dave Social App2/Dave Social App2.entitlements";
 				DEVELOPMENT_TEAM = VK9VX862UY;
 				INFOPLIST_FILE = "Dave Social App2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.daveapps.Dave-Social-App2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos10.3;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
