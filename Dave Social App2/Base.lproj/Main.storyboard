@@ -145,18 +145,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYP-YF-SSu">
-                                <rect key="frame" x="159" y="318" width="56" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SignOut">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="signInTapped:" destination="jNe-KT-68m" eventType="touchUpInside" id="X28-jM-gM5"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pz-5r-kfO" customClass="FancyView" customModule="Dave_Social_App2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <color key="backgroundColor" red="0.0" green="0.73725490196078436" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="AKD-1c-hQ0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxA-1f-HdN" customClass="FancyView" customModule="Dave_Social_App2" customModuleProvider="target">
+                                <rect key="frame" x="16" y="81" width="343" height="65"/>
+                                <color key="backgroundColor" red="0.91112775260000001" green="0.91112775260000001" blue="0.91112775260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="l0Y-Za-vWg"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.00038964248960837722" green="0.51384139060974121" blue="0.56091767549514771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4Pz-5r-kfO" secondAttribute="trailing" id="Iz0-qI-mAA"/>
+                            <constraint firstItem="BxA-1f-HdN" firstAttribute="leading" secondItem="4aP-za-loy" secondAttribute="leading" constant="16" id="Jmx-si-HY7"/>
+                            <constraint firstItem="BxA-1f-HdN" firstAttribute="top" secondItem="4Pz-5r-kfO" secondAttribute="bottom" constant="16" id="TGq-mf-tM3"/>
+                            <constraint firstItem="4Pz-5r-kfO" firstAttribute="leading" secondItem="4aP-za-loy" secondAttribute="leading" id="aDe-Mc-CjF"/>
+                            <constraint firstAttribute="trailing" secondItem="BxA-1f-HdN" secondAttribute="trailing" constant="16" id="l1K-Vl-KkP"/>
+                            <constraint firstItem="4Pz-5r-kfO" firstAttribute="top" secondItem="4aP-za-loy" secondAttribute="top" id="rf5-c7-bUR"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="LuA-wr-CH9"/>
@@ -164,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQu-xw-GzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="128"/>
+            <point key="canvasLocation" x="796" y="127.28635682158921"/>
         </scene>
     </scenes>
     <resources>
