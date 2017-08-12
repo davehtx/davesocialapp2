@@ -19,6 +19,7 @@
 		8DA669351F1322FF0010DA9D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA669341F1322FF0010DA9D /* RoundButton.swift */; };
 		8DA669371F1326160010DA9D /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA669361F1326160010DA9D /* FancyField.swift */; };
 		8DA669391F1327B70010DA9D /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA669381F1327B70010DA9D /* FancyButton.swift */; };
+		8DA9227C1F3E898E00725FC9 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA9227B1F3E898E00725FC9 /* CircleView.swift */; };
 		8DCBA4DA1F28343D00049C05 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCBA4D91F28343D00049C05 /* FeedVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		8DA669361F1326160010DA9D /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		8DA669381F1327B70010DA9D /* FancyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
 		8DA6693A1F1C60520010DA9D /* Dave Social App2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dave Social App2.entitlements"; sourceTree = "<group>"; };
+		8DA9227B1F3E898E00725FC9 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		8DCBA4D91F28343D00049C05 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		B41EFC9927A7F2C9477BA181 /* Pods-Dave Social App2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dave Social App2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dave Social App2/Pods-Dave Social App2.release.xcconfig"; sourceTree = "<group>"; };
 		F6CFA595FE788ECEA8DA74BB /* Pods_Dave_Social_App2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dave_Social_App2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 				8DA669341F1322FF0010DA9D /* RoundButton.swift */,
 				8DA669361F1326160010DA9D /* FancyField.swift */,
 				8DA669381F1327B70010DA9D /* FancyButton.swift */,
+				8DA9227B1F3E898E00725FC9 /* CircleView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA9227C1F3E898E00725FC9 /* CircleView.swift in Sources */,
 				8DA669371F1326160010DA9D /* FancyField.swift in Sources */,
 				8DA6691B1F0DD1620010DA9D /* SignInVC.swift in Sources */,
 				8DA669351F1322FF0010DA9D /* RoundButton.swift in Sources */,
