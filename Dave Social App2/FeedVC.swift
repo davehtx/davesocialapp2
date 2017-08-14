@@ -17,6 +17,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         print("Start View Did Load in FeedVC")
+            print("Print the database URL \(DB_BASE)")
+       // print("Print the REFPOSTS database URL \()")
         
         super.viewDidLoad()
         tableView.delegate = self
