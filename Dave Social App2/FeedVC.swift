@@ -36,6 +36,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    
+    
     @IBAction func signOutTapped(_ sender: AnyObject) {
         
         // need to sign out of firebase
