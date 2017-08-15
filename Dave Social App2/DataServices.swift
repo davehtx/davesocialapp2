@@ -38,6 +38,11 @@ class DataService {
         
     }
     
+    var REF_POSTS: DatabaseReference {
+        return _REF_POSTS
+    }
+
+    
     
     var REF_USERS: DatabaseReference {
         return _REF_USERS
