@@ -15,6 +15,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var posts = [Post]()
+    
+    
     override func viewDidLoad() {
         print("Start View Did Load in FeedVC")
             print("Print the database URL \(DB_BASE)")
@@ -26,20 +29,34 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         // this is a listener for posts
        
-//        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) -> Void in
-//            // Do things with snapshot here
-//            print(snapshot)
-//        })
-        
-        DataService.ds.REF_POSTS.observe(.value) { (snapshot) in
+      
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) -> Void in
+            // Do things with snapshot here
             
+            //  print(snapshot.value as Any)
             
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                
+                for snap in snapshot {
+                    print("SNAP: \(snap)")
+                    
+                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        print("KEY: \(key)")
+                        
+                        let post = Post(postKey: key, postData: postDict)
+                        
+                        print("POST: \(post)")
+                        self.posts.append(post)
+                        
+                        
+                    }
+                }
+            }
             
-            print(snapshot.value as Any)
+            self.tableView.reloadData()
             
-            
-            
-        }
+            })
         
     
     }
@@ -49,10 +66,18 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        
+        print("DAVE: Number of posts: \(posts.count)")
+        
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let post = posts[indexPath.row]
+        print("DAVE: Post caption \(post.caption)")
+        
+
         return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
         
     }
