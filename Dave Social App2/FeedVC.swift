@@ -11,11 +11,18 @@ import Firebase
 import SwiftKeychainWrapper
 
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
+    
+    @IBOutlet weak var imageAdd: CircleView!
+    
     var posts = [Post]()
+    var imagePicker: UIImagePickerController!
+    
+
+    
     
     
     override func viewDidLoad() {
@@ -27,6 +34,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
+        
+        imagePicker =  UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        
         // this is a listener for posts
        
       
@@ -35,10 +47,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             //  print(snapshot.value as Any)
             
+            self.posts = [] // THIS IS THE NEW LINE
+
+            
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 
                 for snap in snapshot {
-                    print("SNAP: \(snap)")
+                    print("snapshot: \(snapshot)")
                     
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
@@ -67,7 +82,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print("DAVE: Number of posts: \(posts.count)")
+        print("DAVE: Number of posts is: \(posts.count)")
         
         return posts.count
     }
@@ -79,6 +94,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             cell.configureCell(post: post)
             print("DAVE: Post caption \(post.caption)")
+            print("DAVE: Post ImageUrl \(post.imageUrl)")
             return cell
         } else {
             return PostCell()
@@ -88,6 +104,31 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
        
         
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            imageAdd.image = image
+            
+            
+        } else {
+            print("DAVE a valid image was not selected")
+            
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func addimageTapped(_ sender: UITapGestureRecognizer) {
+    
+        print("addimageTapped")
+         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
+    
+    
     
     
     

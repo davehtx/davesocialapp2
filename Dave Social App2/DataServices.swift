@@ -18,11 +18,6 @@ let DB_BASE = Database.database().reference()
 
 class DataService {
     
-
-    
-    
-
-    
     static let ds = DataService()
     // singleton accessible everywhere
     
