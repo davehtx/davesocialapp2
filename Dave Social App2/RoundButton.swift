@@ -33,7 +33,17 @@ class RoundButton: UIButton {
 //        layer.shadowRadius = 5.0
 //        layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
     
-        layer.cornerRadius = self.frame.width / 2
+        
+        layer.masksToBounds = false
+        layer.borderColor = UIColor.white.cgColor
+        print("Circle button frame width is: \(frame.width)")
+        layer.cornerRadius = (self.frame.width / 2) + 0
+        
+        print("test \(layer.cornerRadius)")
+        
+        clipsToBounds = true
+
+        
     }
     
     

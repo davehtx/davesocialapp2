@@ -171,7 +171,7 @@
                                     <constraint firstAttribute="bottom" secondItem="aIu-gN-1DD" secondAttribute="bottom" constant="13" id="8rk-kK-Ely"/>
                                     <constraint firstAttribute="height" constant="65" id="AKD-1c-hQ0"/>
                                     <constraint firstItem="aIu-gN-1DD" firstAttribute="top" secondItem="4Pz-5r-kfO" secondAttribute="top" constant="20" id="RbT-0q-wz5"/>
-                                    <constraint firstItem="6eJ-zh-94k" firstAttribute="centerY" secondItem="aIu-gN-1DD" secondAttribute="centerY" id="x4m-5f-aCI"/>
+                                    <constraint firstItem="6eJ-zh-94k" firstAttribute="centerY" secondItem="aIu-gN-1DD" secondAttribute="centerY" constant="-1.5" id="x4m-5f-aCI"/>
                                     <constraint firstItem="6eJ-zh-94k" firstAttribute="centerX" secondItem="4Pz-5r-kfO" secondAttribute="centerX" id="xFr-bX-XMU"/>
                                     <constraint firstItem="aIu-gN-1DD" firstAttribute="top" secondItem="4Pz-5r-kfO" secondAttribute="top" constant="20" id="xRF-Ng-ekO"/>
                                 </constraints>
@@ -188,7 +188,7 @@
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="t8e-aI-0NL"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="uEs-cx-f5M"/>
+                                                    <constraint firstAttribute="height" constant="49" id="uEs-cx-f5M"/>
                                                 </constraints>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="vg9-6w-bfm" appends="YES" id="vew-gR-oxb"/>
@@ -204,7 +204,7 @@
                                                 <rect key="frame" x="267" y="0.0" width="60" height="49"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="7pR-Yw-15l"/>
+                                                    <constraint firstAttribute="height" constant="49" id="7pR-Yw-15l"/>
                                                     <constraint firstAttribute="width" constant="60" id="8BZ-UH-6A6"/>
                                                 </constraints>
                                                 <state key="normal" image="add-post"/>
