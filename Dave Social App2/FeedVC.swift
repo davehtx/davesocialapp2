@@ -16,6 +16,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: CircleView!
     
+    @IBOutlet weak var captionField: FancyField!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
@@ -145,7 +146,44 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     
     
-    
+    @IBAction func postBtnTapped(_ sender: Any) {
+        // grab image and post to upload to firebase
+        // need a guard statement to check conditions
+        guard let caption = captionField.text, caption != "" else {
+            print ("DAVE: Caption must be entered")
+            return
+        }
+        guard  let img = imageAdd.image else {
+            print("an image must be selected")
+            return
+        }
+        // we have an image and caption at this point
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            
+            let imgUid = NSUUID().uuidString
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+           
+           
+             DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
+           
+            
+            
+                if error != nil {
+                    print("DAVE: Unable to upload image to Firebasee storage")
+            
+                } else {
+                    
+                    print("DAVE successfully uploaded images to firebase storage")
+                    let downloadURL = metadata.downloadURL()?.absoluteString
+                    
+                    
+                }
+        }
+    }
+    }
     
     @IBAction func signOutTapped(_ sender: AnyObject) {
         

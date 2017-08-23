@@ -22,7 +22,7 @@
 		8DA669391F1327B70010DA9D /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA669381F1327B70010DA9D /* FancyButton.swift */; };
 		8DA9227C1F3E898E00725FC9 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA9227B1F3E898E00725FC9 /* CircleView.swift */; };
 		8DA9227E1F3F3E9400725FC9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA9227D1F3F3E9400725FC9 /* PostCell.swift */; };
-		8DA922811F412B4F00725FC9 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA922801F412B4F00725FC9 /* DataServices.swift */; };
+		8DA922811F412B4F00725FC9 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA922801F412B4F00725FC9 /* DataService.swift */; };
 		8DCBA4DA1F28343D00049C05 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCBA4D91F28343D00049C05 /* FeedVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +45,7 @@
 		8DA6693A1F1C60520010DA9D /* Dave Social App2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dave Social App2.entitlements"; sourceTree = "<group>"; };
 		8DA9227B1F3E898E00725FC9 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		8DA9227D1F3F3E9400725FC9 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		8DA922801F412B4F00725FC9 /* DataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
+		8DA922801F412B4F00725FC9 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8DCBA4D91F28343D00049C05 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		B41EFC9927A7F2C9477BA181 /* Pods-Dave Social App2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dave Social App2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dave Social App2/Pods-Dave Social App2.release.xcconfig"; sourceTree = "<group>"; };
 		F6CFA595FE788ECEA8DA74BB /* Pods_Dave_Social_App2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dave_Social_App2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,7 +158,7 @@
 		8DA9227F1F412B3000725FC9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8DA922801F412B4F00725FC9 /* DataServices.swift */,
+				8DA922801F412B4F00725FC9 /* DataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 				8D6077171F43D6D80095A24C /* Post.swift in Sources */,
 				8DA669351F1322FF0010DA9D /* RoundButton.swift in Sources */,
 				8DA669391F1327B70010DA9D /* FancyButton.swift in Sources */,
-				8DA922811F412B4F00725FC9 /* DataServices.swift in Sources */,
+				8DA922811F412B4F00725FC9 /* DataService.swift in Sources */,
 				8DCBA4DA1F28343D00049C05 /* FeedVC.swift in Sources */,
 				8DA669191F0DD1620010DA9D /* AppDelegate.swift in Sources */,
 				8DA669301F1315790010DA9D /* FancyView.swift in Sources */,

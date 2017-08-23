@@ -1,5 +1,5 @@
 //
-//  DataServices.swift
+//  DataService.swift
 //  Dave Social App2
 //
 //  Created by Dave Hofmann on 8/13/17.
@@ -7,18 +7,17 @@
 //
 
 import Foundation
-
 import Firebase
+import SwiftKeychainWrapper
+
 
 // this goes into plist and gets URL for Firebase database
 let DB_BASE = Database.database().reference()
+
 // this is for the firebase database of users and posts
+
 let STORAGE_BASE = Storage.storage().reference()
 // this is for the firewbase storage of photos
-
-
-
-
 
 
 class DataService {
@@ -33,41 +32,31 @@ class DataService {
     private var _REF_USERS = DB_BASE.child("users")
     
     // storage references
-    private var _REF_POSTS_IMAGES = STORAGE_BASE.child("post-pics")
+    private var _REF_POST_IMAGES = STORAGE_BASE.child("post-pics")
     
     
     var REF_BASE: DatabaseReference {
-        return _REF_POSTS
-        
-        
+        return _REF_BASE
     }
     
     var REF_POSTS: DatabaseReference {
         return _REF_POSTS
     }
-
-    
     
     var REF_USERS: DatabaseReference {
         return _REF_USERS
-        
-        
-        var REF_POSTS_IMAGES: StorageReference {
-            return _REF_POSTS_IMAGES
+    }
+    
+    var REF_POST_IMAGES: StorageReference {
+        return _REF_POST_IMAGES
         }
         
-        
-        
-    }
+       
 
     func createFirebaseDBUser(uid: String, userData: Dictionary<String, String>) {
         // userData is the provider information
         
         // reference where we want to write this data.  Won't wipe out data, just adds data
         REF_USERS.child(uid).updateChildValues(userData)
-        
-        
-        
     }
-    
 }
