@@ -22,6 +22,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
+    var imageSelected = false
     
 
     
@@ -124,7 +125,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageAdd.image = image
-            
+            imageSelected = true
             
         } else {
             print("DAVE a valid image was not selected")
@@ -153,32 +154,28 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             print ("DAVE: Caption must be entered")
             return
         }
-        guard  let img = imageAdd.image else {
+        guard  let img = imageAdd.image, imageSelected == true else {
             print("an image must be selected")
             return
         }
         // we have an image and caption at this point
         
+        // if let imgData = UIImageJPEGRepresentation(img, 0.2) {
         if let imgData = UIImageJPEGRepresentation(img, 0.2) {
-            
             let imgUid = NSUUID().uuidString
             let metadata = StorageMetadata()
             metadata.contentType = "image/jpeg"
             
            
            
-             DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
-           
-            
-            
+            //  DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metadata) { metadata, error in
+                DataService.ds.REF_POST_IMAGES.child(imgUid).putData(imgData, metadata: metadata) { (metadata, error) in
                 if error != nil {
                     print("DAVE: Unable to upload image to Firebasee storage")
             
                 } else {
-                    
                     print("DAVE successfully uploaded images to firebase storage")
-                    let downloadURL = metadata.downloadURL()?.absoluteString
-                    
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
                     
                 }
         }
