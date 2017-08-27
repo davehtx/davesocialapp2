@@ -240,7 +240,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qbu-0D-1la">
-                                                    <rect key="frame" x="8" y="8" width="359" height="298.5"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="299"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LOK-xG-Jpo">
                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="60"/>
@@ -264,10 +264,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="hRv-fg-NFL">
-                                                            <rect key="frame" x="0.0" y="68" width="359" height="172.5"/>
+                                                            <rect key="frame" x="0.0" y="68" width="359" height="173"/>
                                                         </imageView>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cTf-wy-xG1">
-                                                            <rect key="frame" x="0.0" y="248.5" width="359" height="50"/>
+                                                            <rect key="frame" x="0.0" y="249" width="359" height="50"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="J5v-Sh-ebG"/>
@@ -278,17 +278,16 @@
                                                         </textView>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="t1A-bM-oX5">
-                                                    <rect key="frame" x="270" y="316" width="75.5" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="t1A-bM-oX5">
+                                                    <rect key="frame" x="265" y="314" width="75.5" height="22"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Likes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohs-e4-vfN">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohs-e4-vfN">
                                                             <rect key="frame" x="0.0" y="0.0" width="35.5" height="22"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="8888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G1-0O-AIi">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G1-0O-AIi">
                                                             <rect key="frame" x="39.5" y="0.0" width="36" height="22"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -299,14 +298,17 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.91112775260000001" green="0.91112775260000001" blue="0.91112775260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+                                                <constraint firstItem="t1A-bM-oX5" firstAttribute="top" secondItem="Qbu-0D-1la" secondAttribute="bottom" constant="7" id="161-RL-GLj"/>
                                                 <constraint firstAttribute="bottom" secondItem="Qbu-0D-1la" secondAttribute="bottom" constant="40" id="NRS-4p-xUa"/>
                                                 <constraint firstItem="Qbu-0D-1la" firstAttribute="top" secondItem="dVM-Z9-7Qg" secondAttribute="top" constant="8" id="Oje-vo-Nnl"/>
                                                 <constraint firstItem="Qbu-0D-1la" firstAttribute="leading" secondItem="dVM-Z9-7Qg" secondAttribute="leading" constant="8" id="Rxj-Rv-8Z2"/>
                                                 <constraint firstAttribute="trailing" secondItem="Qbu-0D-1la" secondAttribute="trailing" constant="8" id="Vk6-I7-wd0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="t1A-bM-oX5" secondAttribute="trailing" constant="26" id="Vra-lK-j0a"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="caption" destination="cTf-wy-xG1" id="6oR-16-h24"/>
+                                            <outlet property="likeImg" destination="R3s-BG-tz4" id="D2S-H0-Zae"/>
                                             <outlet property="likesLbl" destination="1G1-0O-AIi" id="fzs-AZ-qJ5"/>
                                             <outlet property="postImg" destination="hRv-fg-NFL" id="9fM-ei-F14"/>
                                             <outlet property="profileImg" destination="gRQ-iJ-4C8" id="CyY-tt-PQX"/>

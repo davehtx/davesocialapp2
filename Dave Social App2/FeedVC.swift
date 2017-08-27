@@ -43,6 +43,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imagePicker.delegate = self
         
         // this is a listener for posts
+        
+        // try to force blank to start
+        captionField.text = ""
+        captionField.resignFirstResponder()
+        
+       
        
       
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) -> Void in
@@ -107,19 +113,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 cell.configureCell(post: post, img: nil)
                 print("DAVE: Post caption \(post.caption)")
                 print("DAVE: Post ImageUrl \(post.imageUrl)")
-                return cell
             }
+            return cell
             
-            
-            
-           
         } else {
             return PostCell()
-            
         }
-
-       
-        
+ 
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -199,7 +199,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         captionField.text = ""
         imageSelected = false
-        // reset the image back to add mage icon
+        // reset the image back to add image icon
         imageAdd.image = UIImage(named: "add-image")
         
         tableView.reloadData()

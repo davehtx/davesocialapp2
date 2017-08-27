@@ -17,17 +17,31 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var caption: UITextView!
     @IBOutlet weak var likesLbl: UILabel!
-
+    @IBOutlet weak var likeImg: UIImageView!
+    
     var post: Post!
+     // let likesRef = DataService.ds.REF_USERS_CURRENT.child("likes")
+    // not sure why he changes this
+    var likesRef: DatabaseReference!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
+        // UITapGestureRecognizer(target: <#T##Any?#>, action: Selector?)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
+        tap.numberOfTapsRequired = 1
+        likeImg.addGestureRecognizer(tap)
+        likeImg.isUserInteractionEnabled = true
+
     }
 
     func configureCell(post: Post, img: UIImage? = nil) {
         self.post = post
+        
+        // likesRef = DataService.ds.REF_USERS_CURRENT.child("likes")
+        likesRef = DataService.ds.REF_USERS_CURRENT.child("likes").child(post.postKey)
+        
         self.caption.text = post.caption
         self.likesLbl.text = "\(post.likes)"
         
@@ -63,9 +77,52 @@ class PostCell: UITableViewCell {
             })
                 
             
+        }
+        
+        // let likesRef = DataService.ds.REF_USERS_CURRENT.child("likes")
+        // get a single event of the number of likes from database
+        
+        likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                // if not set then use empty heart
+                self.likeImg.image = UIImage (named: "empty-heart")
+                print("  ")
+                //print("DAVE this one is NOT liked \(likesRef)")
+            } else {
+                self.likeImg.image = UIImage(named: "filled-heart")
+                print("  ")
+               // print("DAVE this one is liked \(likesRef)")
+                
             }
-            
+    })
+    
     }
+    
+        func likeTapped(sender: UITapGestureRecognizer) {
+            
+            print("DAVE the Like button tapped")
+            likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                if let _ = snapshot.value as? NSNull {
+                    // if not set to Like then use filled heart
+                    self.likeImg.image = UIImage (named: "filled-heart")
+                    
+                    self.post.adjustLikes(addLike: true)
+                    self.likesRef.setValue(true)
+                    
+                    
+                } else {
+                    self.likeImg.image = UIImage(named: "empty-heart")
+                    self.post.adjustLikes(addLike: false)
+                    self.likesRef.removeValue()
+                    
+                }
+            })
+
+            
+        }
+        
+        
+    
     
     
     
